@@ -1,8 +1,6 @@
-require 'java'
-require 'ext/jedis'
-require 'ext/commons-pool2'
+require 'jeredis/ext'
 
-module JrJedis
+module Jeredis
   class Pool
     java_import Java::RedisClientsJedis::JedisPool
     java_import Java::RedisClientsJedis::JedisPoolConfig
@@ -35,7 +33,7 @@ module JrJedis
     end
 
     def with
-      conn = @pool.resource
+      conn = Jeredis::Client.new(@pool.resource)
       yield conn
     ensure
       conn.close if conn
