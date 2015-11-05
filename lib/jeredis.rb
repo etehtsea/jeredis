@@ -2,7 +2,7 @@ require 'java'
 require 'ext/jedis'
 require 'ext/commons-pool2'
 
-module JrJedis
+module Jeredis
   class Pool
     java_import Java::RedisClientsJedis::JedisPool
     java_import Java::RedisClientsJedis::JedisPoolConfig

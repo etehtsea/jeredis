@@ -1,12 +1,12 @@
 Gem::Specification.new do |spec|
-  spec.name          = "jrjedis"
+  spec.name          = "jeredis"
   spec.version       = "0.1.0"
   spec.platform      = "java"
   spec.authors       = ["Konstantin Shabanov"]
   spec.email         = ["etehtsea@gmail.com"]
 
   spec.summary       = spec.description = "Jedis wrapper"
-  spec.homepage      = "http://github.com/etehtsea/jrjedis"
+  spec.homepage      = "http://github.com/etehtsea/jeredis"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -- lib`.split("\n")
