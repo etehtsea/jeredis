@@ -15,6 +15,8 @@ module JrJedis
     # @option options [String] :host ("localhost") Hostname or IP address.
     # @option options [Integer] :port (6379) Redis server port.
     # @option options [Integer] :timeout (5000) Connection timeout in ms.
+    # @option options [String] :password Redis server password.
+    # @option options [Integer] :db Redis database number.
     # @option options [Integer] :min_idle Min idle threads in a pool.
     # @option options [Integer] :max_idle Max idle threads in a pool.
     # @option options [Integer] :max_total Max total active threads.
