@@ -22,6 +22,8 @@ module JrJedis
       host = opts.delete(:host) || 'localhost'
       port = opts.delete(:port) || 6379
       timeout = opts.delete(:timeout) || 5000
+      password = opts.delete(:password)
+      db = opts.delete(:db) || 0
 
       config = JedisPoolConfig.new
       config.minIdle = opts.fetch(:min_idle) if opts[:min_idle]
@@ -31,7 +33,7 @@ module JrJedis
       config.max_wait_millis = timeout
       config.jmx_enabled = true
 
-      @pool = JedisPool.new(config, host, port, timeout)
+      @pool = JedisPool.new(config, host, port, timeout, password, db)
     end
 
     def with
