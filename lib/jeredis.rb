@@ -20,7 +20,8 @@ module Jeredis
     # @option options [Integer] :min_idle Min idle threads in a pool.
     # @option options [Integer] :max_idle Max idle threads in a pool.
     # @option options [Integer] :max_total Max total active threads.
-    def initialize(opts = {})
+    def initialize(options = {})
+      opts = options.dup
       host = opts.delete(:host) || 'localhost'
       port = opts.delete(:port) || 6379
       timeout = opts.delete(:timeout) || 5000
